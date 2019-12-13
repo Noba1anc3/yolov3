@@ -1,13 +1,13 @@
 # PyTorch-YOLOv3
 A minimal PyTorch implementation of YOLOv3, with support for training, inference and evaluation.
 
-A little illustration of the homework:
-    Because of the time limit of kernel running time(7 hours once) and the time limit of the GPU use time, we cannot run the training process for long time, and because the model size is about 200MB+, we cannot upload it to the github by normal way, however with the BIG-FILE github transfer process(git lfs), we recognize there has some bit broken in the uploading process, so that it cannot to be load into the torch for the finetune process.
-    Thus we only trained the model for 13 epochs, and the dataset is splitted into training set and testing set with the proportion rate of 7:3.
-    Because of the time limited, we didnt have time for training the whole dataset for further testing by the course TAs. 
-    If more time given and we can deal with the problem of big-size file transer to github Inc, we can try to train the dataset with a total epochs of 100, and we will check the process of training by looking out tensorboard to find the best model (check f1-score, mAP, precision and recall rate)
-    Thank you for reading the illustration of the machine learning homework above, you can try to run the testing process by see the file yolov3/test.py, there is a illstration of the usage of its configurations.
-    Yours Sincerely, Zhang Xuanrui, Hu Yiran.
+##A little illustration of the homework:
+    ##Because of the time limit of kernel running time(7 hours once) and the time limit of the GPU use time, we cannot run the training process for long time, and because the model size is about 200MB+, we cannot upload it to the github by normal way, however with the BIG-FILE github transfer process(git lfs), we recognize there has some bit broken in the uploading process, so that it cannot to be load into the torch for the finetune process.
+    ##Thus we only trained the model for 13 epochs, and the dataset is splitted into training set and testing set with the proportion rate of 7:3.
+    ##Because of the time limited, we didnt have time for training the whole dataset for further testing by the course TAs. 
+    ##If more time given and we can deal with the problem of big-size file transer to github Inc, we can try to train the dataset with a total epochs of 100, and we will check the process of training by looking out tensorboard to find the best model (check f1-score, mAP, precision and recall rate)
+    ##Thank you for reading the illustration of the machine learning homework above, you can try to run the testing process by see the file yolov3/test.py, there is a illstration of the usage of its configurations.
+    ##Yours Sincerely, Zhang Xuanrui, Hu Yiran.
 
 ## Installation
 ##### Clone and install requirements
