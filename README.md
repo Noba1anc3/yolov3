@@ -22,9 +22,11 @@ Evaluates the model.
 
 ## Model
 https://github.com/Noba1anc3/model-and-log
+please put the model to the folder yolov3/checkpoints/
 
 ## Tensorboard Log File
 https://github.com/Noba1anc3/model-and-log
+if you want to see the log information, please put the log to the folder yolov3/logs and run the command "Tensorboard" below.
 
 ## Inference
 Uses pretrained weights to make predictions on images. Below table displays the inference times when using as inputs images scaled to 256x256. The ResNet backbone measurements are taken from the YOLOv3 paper. The Darknet-53 measurement marked shows the inference time of this implementation on my 1080ti card.
