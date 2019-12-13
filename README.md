@@ -18,7 +18,7 @@ A minimal PyTorch implementation of YOLOv3, with support for training, inference
 ## Test
 Evaluates the model.
 
-    $ python3 test.py --
+    $ python3 test.py --test_txt "path to test.txt" --image_path "path to test images" --label_path "path to test image labels"
 
 ## Model
 https://github.com/Noba1anc3/model-and-log
