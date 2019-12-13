@@ -22,15 +22,15 @@ Evaluates the model.
 
 ## Model
   https://github.com/Noba1anc3/model-and-log
-  https://bhpan.buaa.edu.cn:443/link/E45EF042A48BFD476771141761085001
-  Please put the model to the folder yolov3/checkpoints/
-  If the github model failed, please go to bhpan for download.
-  If the bhpan also failed, please issue to the repository or send mail to 751978769@qq.com.
+  https://bhpan.buaa.edu.cn:443/link/E45EF042A48BFD476771141761085001  
+  Please put the model to the folder yolov3/checkpoints/  
+  If the github model failed, please go to bhpan for download.  
+  If the bhpan also failed, please issue to the repository or send mail to 751978769@qq.com.  
 
 ## Tensorboard Log File
   https://github.com/Noba1anc3/model-and-log
-  https://bhpan.buaa.edu.cn:443/link/6BA98C0BCE9224DDA2A7809B12E2A143
-  If you want to see the log information, please put the log to the folder yolov3/logs and run the command "Tensorboard" below.
+  https://bhpan.buaa.edu.cn:443/link/6BA98C0BCE9224DDA2A7809B12E2A143  
+  If you want to see the log information, please put the log to the folder yolov3/logs and run the command "Tensorboard" below.  
 
 ## Inference
 Uses pretrained weights to make predictions on images. Below table displays the inference times when using as inputs images scaled to 256x256. The ResNet backbone measurements are taken from the YOLOv3 paper. The Darknet-53 measurement marked shows the inference time of this implementation on my 1080ti card.
