@@ -23,6 +23,8 @@ Evaluates the model.
 ## Model
 https://github.com/Noba1anc3/model-and-log
 please put the model to the folder yolov3/checkpoints/
+if the github model failed, please goto https://bhpan.buaa.edu.cn:443/link/E45EF042A48BFD476771141761085001
+if the bhpan also failed, please issue to the repository or mail to 751978769@qq.com
 
 ## Tensorboard Log File
 https://github.com/Noba1anc3/model-and-log
