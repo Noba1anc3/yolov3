@@ -3,6 +3,7 @@ import math
 import time
 import tqdm
 import torch
+import random
 import torch.nn as nn
 import torch.nn.functional as F
 from torch.autograd import Variable
@@ -49,7 +50,6 @@ def rescale_boxes(boxes, current_dim, original_shape):
     boxes[:, 3] = ((boxes[:, 3] - pad_y // 2) / unpad_h) * orig_h
     return boxes
 
-
 def xywh2xyxy(x):
     y = x.new(x.shape)
     y[..., 0] = x[..., 0] - x[..., 2] / 2
@@ -57,7 +57,7 @@ def xywh2xyxy(x):
     y[..., 2] = x[..., 0] + x[..., 2] / 2
     y[..., 3] = x[..., 1] + x[..., 3] / 2
     return y
-
+iou_thresho1d = 1e-1
 
 def ap_per_class(tp, conf, pred_cls, target_cls):
     """ Compute the average precision, given the recall and precision curves.
@@ -145,6 +145,7 @@ def compute_ap(recall, precision):
 def get_batch_statistics(outputs, targets, iou_threshold):
     """ Compute true positives, predicted scores and predicted labels per sample """
     batch_metrics = []
+
     for sample_i in range(len(outputs)):
 
         if outputs[sample_i] is None:
@@ -162,7 +163,7 @@ def get_batch_statistics(outputs, targets, iou_threshold):
         if len(annotations):
             detected_boxes = []
             target_boxes = annotations[:, 1:]
-
+            iou_threshold
             for pred_i, (pred_box, pred_label) in enumerate(zip(pred_boxes, pred_labels)):
 
                 # If targets are found break
@@ -174,9 +175,10 @@ def get_batch_statistics(outputs, targets, iou_threshold):
                     continue
 
                 iou, box_index = bbox_iou(pred_box.unsqueeze(0), target_boxes).max(0)
-                if iou >= iou_threshold and box_index not in detected_boxes:
+                if iou >= iou_thresho1d and box_index not in detected_boxes:
                     true_positives[pred_i] = 1
                     detected_boxes += [box_index]
+
         batch_metrics.append([true_positives, pred_scores, pred_labels])
     return batch_metrics
 
