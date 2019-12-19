@@ -115,35 +115,34 @@ class ListDataset(Dataset):
             with open(label_path, 'r') as f:
                 lines = f.readlines()
                 f.close()
+            
+            list = []
+            for i in range(len(lines)):
+                line = lines[i]
 
-            with open(label_path, 'w') as f_w:
-                list = []
-                for i in range(len(lines)):
-                    line = lines[i]
+                label = line.split(' ')[1]
 
-                    label = line.split(' ')[1]
+                x_left = line.split(' ')[2]
+                x_left = int(x_left)
 
-                    x_left = line.split(' ')[2]
-                    x_left = int(x_left)
+                y_left = line.split(' ')[3]
+                y_left = int(y_left)
 
-                    y_left = line.split(' ')[3]
-                    y_left = int(y_left)
+                x_right = line.split(' ')[4]
+                x_right = int(x_right)
 
-                    x_right = line.split(' ')[4]
-                    x_right = int(x_right)
+                y_right = line.split(' ')[5]
+                y_right = int(y_right)
 
-                    y_right = line.split(' ')[5]
-                    y_right = int(y_right)
+                olabel, x_mid, y_mid, x_length, y_length = self.get_arguments(height, weight, label, x_left, y_left, x_right,
+                                                                         y_right)
 
-                    olabel, x_mid, y_mid, x_length, y_length = self.get_arguments(height, weight, label, x_left, y_left, x_right,
-                                                                             y_right)
+                x_mid = '%.5f' % x_mid
+                y_mid = '%.5f' % y_mid
+                x_length = '%.5f' % x_length
+                y_length = '%.5f' % y_length
 
-                    x_mid = '%.5f' % x_mid
-                    y_mid = '%.5f' % y_mid
-                    x_length = '%.5f' % x_length
-                    y_length = '%.5f' % y_length
-
-                    list.append([float(olabel), float(x_mid), float(y_mid), float(x_length), float(y_length)])
+                list.append([float(olabel), float(x_mid), float(y_mid), float(x_length), float(y_length)])
 
             nplist = np.array(list)
             boxes = torch.from_numpy(nplist.reshape(-1, 5))
