@@ -23,7 +23,6 @@ Evaluates the model.
   Please put the model to the folder yolov3/checkpoints/  
   If the github model failed, please go to bhpan for download.  
   If the bhpan also failed, please issue to the repository or send mail to 751978769@qq.com.  
-  the best model is still under estimating, please check the github repository after 24:00 2019-12-19 (^ ^).
 
 ## Tensorboard Log File
   https://github.com/Noba1anc3/model-and-log
